@@ -35,11 +35,9 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
-    text = event.message.text #message from user
-
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text='Hello World!')) #reply the same message from user
+    #text = event.message.text #message from user
+    if event.message.text == "mbim":
+    	line_bot_api.reply_message(event.reply_token, TextSendMessage(text='opo?')) #reply the same message from user
     
 
 import os
